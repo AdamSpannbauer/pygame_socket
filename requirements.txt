@@ -1,0 +1,3 @@
+# any version of pygame should work on windows
+# below version was needed to run on adam's mac
+pygame==2.0.0.dev6
