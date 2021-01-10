@@ -66,9 +66,11 @@ def start_server():
             args=(conn, addr, current_player, player_positions),
         )
         thread.start()
-        current_player = 1
 
-        print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")
+        active_connections = threading.activeCount() - 1
+        current_player = active_connections - 1
+
+        print(f"[ACTIVE CONNECTIONS] {active_connections}")
 
 
 print("[STARTING] server is starting...")
