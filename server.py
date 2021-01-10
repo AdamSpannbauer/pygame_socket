@@ -69,7 +69,7 @@ def start_server():
         thread.start()
 
         active_connections = threading.activeCount() - 1
-        current_player = active_connections - 1
+        current_player = 1
 
         print(f"[ACTIVE CONNECTIONS] {active_connections}")
 
