@@ -1,3 +1,6 @@
+# aws ec2
+*.pem
+
 # pycharm
 .idea
 
