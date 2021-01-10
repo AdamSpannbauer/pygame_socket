@@ -3,7 +3,8 @@ import threading
 from network import get_host_name, PORT, FORMAT
 
 
-SERVER = get_host_name()
+# SERVER = get_host_name()
+SERVER = "0.0.0.0"
 print(f"[IP] using {SERVER}")
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -33,7 +34,7 @@ def handle_client(conn, addr, current_player, player_positions):
     connected = True
     while connected:
         try:
-            player_position = conn.recv(2048).decode(FORMAT)
+            player_position = conn.recv(8).decode(FORMAT)
 
             if not player_position:
                 print(f"[DISCONNECTED] {addr} disconnected")
